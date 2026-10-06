@@ -122,3 +122,7 @@ $("#form").addEventListener("submit", e => {
   }
   msg.style.color = "#7ee2a8"; msg.textContent = "Opening your message app…"; f.reset();
 });
+
+// Close the mobile menu when tapping outside it or pressing Escape
+document.addEventListener("click", e => { if (!e.target.closest("#menu,#burger")) menu.classList.remove("open"); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") menu.classList.remove("open"); });
